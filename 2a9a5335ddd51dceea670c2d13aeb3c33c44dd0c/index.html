@@ -230,25 +230,47 @@
 
         #stockholm .stockholm-header {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             flex: 1;
             justify-content: space-evenly;
             padding-right: 10px;
+            padding-bottom: 40px;
+        }
+        
+        #stockholm .stockholm-header-text {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            justify-content: space-evenly;
+        }
+        
+        .stockholm-header-image {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .stockholm-header-image img {
+            height: auto;
+            width: 90%;
         }
 
         .stockholm-header h3,
-        .stockholm-header h5 {
+        .stockholm-details h5 {
             font-family: "msc-reg";
         }
 
-        .stockholm-header h5 {
+        .stockholm-details h5 {
             width: 100%;
             justify-content: flex-start;
         }
 
-        .stockholm-header p {
-            padding-bottom: 20px;
+        .stockholm-header p,
+        .stockholm-details p {
+            adding-bottom: 20px;
         }
 
         .stockholm-activities {
@@ -314,6 +336,20 @@
 
         .middle .text {
             line-height: 2em;
+        }
+
+        @media screen and (max-width: 1845px) {
+            .middle {
+                max-height: 75%;
+                overflow: scroll;
+            }
+        }
+        
+        @media screen and (max-width: 1098px) {
+            .middle {
+                max-height: 50%;
+                overflow: scroll;
+            }
         }
         /* End Stockholm */
 
@@ -464,14 +500,22 @@
             <!-- Stockholm -->
             <div id="stockholm">
                 <div class="stockholm-header">
-                    <h3>Stockholm</h3>
-                    <p class="text">
-                        Many guests will be travelling to attend, so we really
-                        encourage you to stay a little longer, if you are able
-                        to, and enjoy the city. We will be staying in Stockholm
-                        in the days before and after the wedding so, if you can
-                        be around, please do let us know.
-                    </p>
+                    <div class="stockholm-header-image">
+                        <img src="images/stockholm.jpeg" />
+                    </div>
+                    <div class="stockholm-header-text">
+                        <h3>Stockholm</h3>
+                        <p class="text">
+                            Many guests will be travelling to attend, so we
+                            really encourage you to stay a little longer, if you
+                            are able to, and enjoy the city. We will be staying
+                            in Stockholm in the days before and after the
+                            wedding so, if you can be around, please do let us
+                            know.
+                        </p>
+                    </div>
+                </div>
+                <div class="stockholm-details">
                     <h5>Getting Around</h5>
                     <p class="text">
                         Getting around Stockholm is very straightforward. All
