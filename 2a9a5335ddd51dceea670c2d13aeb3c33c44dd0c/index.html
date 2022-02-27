@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Anna & Ed's Wedding</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <style>
+        /* Fonts */
+        @font-face {
+            font-family: "msc-reg";
+            src: url("fonts/MarcellusSC-Regular.ttf") format("truetype");
+        }
+        @font-face {
+            font-family: "cor-gar";
+            src: url("fonts/CormorantGaramond-Bold.ttf") format("truetype");
+        }
+        /* End Fonts */
+
+        /* App */
+        #app {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* End App */
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .navbar .navbar-header {
+            font-family: "msc-reg";
+            padding: 80px 0;
+        }
+
+        .navbar ul {
+            flex: 1;
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+            justify-content: space-evenly;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        .navbar a {
+            font-family: "cor-gar";
+            font-size: 20px;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 7px;
+        }
+
+        .navbar a:hover {
+            background: #c7bfbf8f;
+        }
+        /* End Navbar */
+
+        /* Home */
+        #home {
+            scroll-margin-top: 155px;
+            width: 85%;
+        }
+
+        .home-background {
+            display: flex;
+            width: auto;
+        }
+
+        .home-background img {
+            height: auto;
+            width: 100%;
+        }
+        /* End Home */
+
+        /* Event Details */
+        #event-details {
+            width: 85%;
+            scroll-margin-top: 265px;
+            display: flex;
+            padding: 20px 0;
+        }
+
+        #event-details .details-text {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            justify-content: space-evenly;
+        }
+
+        .details-text h3 {
+            font-family: "msc-reg";
+        }
+
+        .details-text li {
+            padding-bottom: 20px;
+            list-style-type: none;
+            margin: 0;
+            font-size: 22px;
+            line-height: 2em;
+        }
+
+        .details-image {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .details-image img {
+            height: auto;
+            width: 90%;
+        }
+        /* End Event Details */
+
+        /* Getting There */
+        #getting-there {
+            width: 85%;
+            scroll-margin-top: 265px;
+            display: flex;
+            padding: 20px;
+        }
+
+        #getting-there .getting-there-text {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: center;
+            padding-left: 20px;
+        }
+
+        .getting-there-text h3 {
+            font-family: "msc-reg";
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .getting-there-text p {
+            list-style-type: none;
+            margin: 0;
+        }
+
+        .getting-there-map {
+            width: 50%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        .getting-there-map iframe {
+            max-width: 100%;
+            flex: 1;
+        }
+        /* End Getting There */
+
+        /* Accommodation */
+        #accommodation {
+            width: 85%;
+            scroll-margin-top: 265px;
+            display: flex;
+            padding: 20px 0;
+        }
+
+        #accommodation .accommodation-text {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            justify-content: space-evenly;
+            padding-right: 10px;
+        }
+
+        .accommodation-text h3 {
+            font-family: "msc-reg";
+        }
+
+        .accommodation-text p {
+            list-style-type: none;
+            margin: 0;
+        }
+
+        .accommodation-map {
+            width: 50%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .accommodation-map iframe {
+            max-width: 100%;
+            flex: 1;
+        }
+        /* End More accommodation */
+
+        /* Stockholm */
+        #stockholm {
+            width: 85%;
+            scroll-margin-top: 265px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+        }
+
+        #stockholm .stockholm-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            justify-content: space-evenly;
+            padding-right: 10px;
+        }
+
+        .stockholm-header h3,
+        .stockholm-header h5 {
+            font-family: "msc-reg";
+        }
+
+        .stockholm-header h5 {
+            width: 100%;
+            justify-content: flex-start;
+        }
+
+        .stockholm-header p {
+            padding-bottom: 20px;
+        }
+
+        .stockholm-activities {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+
+        .activity {
+            flex: 25%;
+            max-width: 33%;
+            padding: 0 4px;
+        }
+
+        .activity-header h4 {
+            display: flex;
+            justify-content: center;
+            font-family: "msc-reg";
+            padding: 10px 0;
+        }
+
+        .activity-header h4 a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .activity-block {
+            position: relative;
+        }
+
+        .activity-block:hover .image {
+            opacity: 0.3;
+        }
+
+        .activity-block:hover .middle {
+            opacity: 1;
+        }
+
+        .activity img {
+            margin-top: 8px;
+            vertical-align: middle;
+        }
+
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: 0.5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: 0.5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 90%;
+        }
+
+        .middle .text {
+            line-height: 2em;
+        }
+        /* End Stockholm */
+
+        /* Wedding Registry */
+        #registry {
+            width: 85%;
+            scroll-margin-top: 265px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        #registry .registry-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "msc-reg";
+        }
+
+        #registry .registry-text {
+            width: 50%;
+            padding-top: 40px;
+        }
+        /* End Wedding Registry */
+
+        /* Misc */
+        .text {
+            font-family: "cor-gar";
+            font-size: 18px;
+            line-height: 3em;
+        }
+        /* End Misc */
+    </style>
+    <body>
+        <div id="app">
+            <!-- Navbar -->
+            <nav class="navbar">
+                <div class="navbar-header">
+                    <h2>Anna & Ed's Wedding</h2>
+                </div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#event-details">Event Details</a></li>
+                    <li><a href="#accommodation">Accommodation</a></li>
+                    <li><a href="#stockholm">Stockholm</a></li>
+                    <li><a href="#registry">Wedding Registry</a></li>
+                </ul>
+            </nav>
+            <!-- End Navbar -->
+
+            <!-- Home -->
+            <div id="home">
+                <div class="home-background">
+                    <img src="images/venue_1.jpg" />
+                </div>
+            </div>
+            <!-- End Home -->
+
+            <!-- Event Details -->
+            <div id="event-details">
+                <div class="details-text">
+                    <h3>The Wedding</h3>
+                    <ul>
+                        <li class="text">Date: September 24th, 2022</li>
+                        <li class="text">
+                            Location: Carlshälls Gård, Stockholm
+                        </li>
+                        <li class="text">
+                            Time: Mid-afternoon till late (precise times to be
+                            confirmed)
+                        </li>
+                        <li class="text">
+                            Dress code: Formal/semi-formal attire
+                        </li>
+                    </ul>
+                </div>
+                <div class="details-image">
+                    <img src="images/venue_2.jpg" />
+                </div>
+            </div>
+            <!-- End Event Details -->
+
+            <!-- Getting There -->
+            <div id="getting-there">
+                <div class="getting-there-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1390.1050337069082!2d18.018187394631727!3d59.32158752168505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77d27f2ab8c7%3A0xa8edded544209dd8!2zQ2FybHNow6RsbHMgR8OlcmQ!5e1!3m2!1sen!2sse!4v1645927784108!5m2!1sen!2sse"
+                        width="600"
+                        height="450"
+                        style="border: 0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                    ></iframe>
+                </div>
+                <div class="getting-there-text">
+                    <h3>Getting there</h3>
+                    <p class="text">
+                        Carlshälls Gård can be found on the island of Långholmen
+                        in the very centre of Stockholm.
+                    </p>
+                    <p class="text">
+                        Whilst in theory you can drive to the venue, this is not
+                        recommended as Sweden has a zero tolerance policy on
+                        driving under the influence. Instead, we recommend that
+                        you either arrange a taxi (Uber and Bolt are readily
+                        available), or take the metro. The nearest station is
+                        <b>Hornstull</b> (accessible via the <i>red</i> and
+                        <i>blue</i> lines) which is approximately a fifteen
+                        minute walk, much of which is on the island itself.
+                    </p>
+                </div>
+            </div>
+            <!-- End Getting There -->
+
+            <!-- Accommodation -->
+            <div id="accommodation">
+                <div class="accommodation-text">
+                    <h3>Accommodation</h3>
+                    <p class="text">
+                        The Långholmen Hotell is by far the most convenient
+                        location to stay, being a mere five minute walk through
+                        a cute, adjacent allotment. The hotel itself was
+                        originally a prison in the 1800s but is, nevertheless,
+                        apparently quite nice.
+                    </p>
+                    <p class="text">
+                        There are plenty of alternative hotels and AirBnbs in
+                        the surrounding area which are either a short walk or a
+                        quick taxi ride away. Taxis should be available
+                        throughout the evening.
+                    </p>
+                </div>
+
+                <div class="accommodation-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d600.3996893718811!2d18.025832059288852!3d59.32111482329216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77d1db20b12f%3A0xba5733bdfb1180b5!2sL%C3%A5ngholmen%20Hotell%20Stockholm!5e1!3m2!1sen!2sse!4v1645927676120!5m2!1sen!2sse"
+                        width="600"
+                        height="450"
+                        style="border: 0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                    ></iframe>
+                </div>
+            </div>
+            <!-- End Accommodation -->
+
+            <!-- Stockholm -->
+            <div id="stockholm">
+                <div class="stockholm-header">
+                    <h3>Stockholm</h3>
+                    <p class="text">
+                        Many guests will be travelling to attend, so we really
+                        encourage you to stay a little longer, if you are able
+                        to, and enjoy the city. We will be staying in Stockholm
+                        in the days before and after the wedding so, if you can
+                        be around, please do let us know.
+                    </p>
+                    <h5>Getting Around</h5>
+                    <p class="text">
+                        Getting around Stockholm is very straightforward. All
+                        the main areas are accessible via tram or bus. The metro
+                        is very good, spans much of the city, and can be used
+                        with just your bank card. Ubers, Bolts, and taxis are
+                        also available but are a little more expensive than
+                        elsewhere. Alternatively, the city is very walkable.
+                    </p>
+                    <h5>What To Do</h5>
+                    <p class="text">
+                        Sweden's capital is a city of islands, and has lots
+                        going on - from art galleries, to the old town (Gamla
+                        Stan), to the King's former private hunting island
+                        (Kungliga Djurgården; now a city national park), there
+                        is plenty to keep you occupied. There's also a theme
+                        park, right in the heart of the city, as well a
+                        countless swimmable waterways and an entire archipelago
+                        to explore. Below are a few suggestions of what
+                        Stockholm has to offer.
+                    </p>
+                </div>
+
+                <div class="stockholm-activities">
+                    <div class="activity">
+                        <div class="activity-header">
+                            <h4>
+                                <a href="https://www.vasamuseet.se/en"
+                                    >The Vasa Museum</a
+                                >
+                            </h4>
+                        </div>
+                        <div class="activity-block">
+                            <img
+                                src="images/vasa.jpg"
+                                style="width: 100%;"
+                                class="image"
+                            />
+                            <div class="middle">
+                                <div class="text">
+                                    The Vasa Museum houses the eponymous ship,
+                                    whose story is quite entertaining. In brief:
+                                    in the 1700s the King of Sweden wanted a
+                                    huge, 64 gun warship. His engineers set to
+                                    work, but found the boat to be incredibly
+                                    unstable. Nevertheless, the King demanded it
+                                    be launched and, during its maiden voyage it
+                                    travelled a short distance out the docks,
+                                    before a light cross-breeze caused it
+                                    capsize and sink in front of a crowd of
+                                    thousands of Stockholmers.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-header">
+                            <h4>
+                                <a href="https://abbathemuseum.com/en/"
+                                    >The ABBA Museum</a
+                                >
+                            </h4>
+                        </div>
+                        <div class="activity-block">
+                            <img
+                                src="images/abba.jpg"
+                                style="width: 100%;"
+                                class="image"
+                            />
+                            <div class="middle">
+                                <div class="text">
+                                    To an outside eye, ABBA is one of the few
+                                    things that Sweden has going for it. While
+                                    Swedish culture certainly does not begin and
+                                    end with ABBA, the museum is a glitzy, camp
+                                    tribute to the Swedish supertroupers, with
+                                    plenty of interactive elements to keep all
+                                    ages entertained.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-header">
+                            <h4>
+                                <a href="https://www.fotografiska.com/sto/en/"
+                                    >Fotografiska</a
+                                >
+                            </h4>
+                        </div>
+                        <div class="activity-block">
+                            <img
+                                src="images/fotografiska.jpg"
+                                class="image"
+                                style="width: 100%;"
+                            />
+                            <div class="middle">
+                                <div class="text">
+                                    Fotografiska is a centre for contemporary
+                                    photography and the visual arts. There are
+                                    typically a number of exhibitions running at
+                                    any given time, whose contents range from
+                                    cultural commentary to dreamy surrealism. It
+                                    is an eclectic mix, but well worth a visit.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Stockholm -->
+
+            <!-- Registry -->
+            <div id="registry">
+                <div class="registry-header">
+                    <h3>Wedding Registry</h3>
+                </div>
+                <div class="registry-text text">
+                    <p>
+                        Having lived together for almost three years, we
+                        realised that we do not need a registry; your presence
+                        is all that we request. However, if you are determined
+                        to give a gift, we are currently saving to buy a house
+                        so any contributions would be very gratefully received.
+                    </p>
+                </div>
+            </div>
+            <!-- End Registry -->
+
+            <hr />
+        </div>
+    </body>
+</html>
