@@ -136,6 +136,54 @@
         }
         /* End Event Details */
 
+        /* Schedule Details */
+        #schedule-details {
+            width: 85%;
+            scroll-margin-top: 265px;
+            display: flex;
+            padding: 20px 0;
+        }
+
+        #schedule-details .details-text,
+        #schedule-details .details-text ul,
+        #schedule-details .details-text p {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        #schedule-details .details-text .text {
+            align-items: center;
+            text-align: center;
+            font-size: 22px;
+            line-height: 2em;
+        }
+
+        .details-text h3 {
+            font-family: "msc-reg";
+        }
+
+        #schedule-details .details-text li {
+            padding-bottom: 10px;
+            list-style-type: none;
+            font-size: 22px;
+            margin: 0;
+            line-height: 2em;
+        }
+
+        .details-image {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .details-image img {
+            height: auto;
+            width: 90%;
+        }
+        /* End Schedule Details */
+
         /* Getting There */
         #getting-there {
             width: 85%;
@@ -193,7 +241,7 @@
             align-items: center;
             flex: 1;
             justify-content: space-evenly;
-            padding-right: 10px;
+            padding-left: 30px;
         }
 
         .accommodation-text h3 {
@@ -421,13 +469,14 @@
                 <div class="details-text">
                     <h3>The Wedding</h3>
                     <ul>
-                        <li class="text">Date: September 24th, 2022</li>
+                        <li class="text">
+                            Date: September 24th, 2022
+                        </li>
                         <li class="text">
                             Location: Carlshälls Gård, Stockholm
                         </li>
                         <li class="text">
-                            Time: Mid-afternoon till late (precise times to be
-                            confirmed)
+                            Time: arrive 15:00 to 15:15 for ceremony start at 15:30
                         </li>
                         <li class="text">
                             Dress code: Formal/semi-formal attire
@@ -444,18 +493,41 @@
             </div>
             <!-- End Event Details -->
 
+            <!-- Schedule Details -->
+            <div id="schedule-details">
+                <div class="details-image">
+                    <img src="images/venue_0.png" />
+                </div>
+                <div class="details-text">
+                    <h3>Schedule for the Day</h3>
+                    <ul>
+                        <li class="text">
+                            15:00 - 15:15: Arrive
+                        </li>
+                        <li class="text">
+                            15:30: Ceremony (Hall)
+                        </li>
+                        <li class="text">
+                            16:00: Prosecco & Mingling (House*)
+                        </li>
+                        <li class="text">
+                            17:30: Dinner (Hall)
+                        </li>
+                    </ul>
+                    <p class="text">
+                        After dinner, we will retire to the House for cake, coffee, 
+                        and avec before returning to the Hall for the reception, 
+                        which will last until 02:00.
+                    </p>
+                    <p class="text">
+                        * Or outdoors if weather permits
+                    </p>
+                </div>
+            </div>
+            <!-- End Schedule Details -->
+
             <!-- Getting There -->
             <div id="getting-there">
-                <div class="getting-there-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1390.1050337069082!2d18.018187394631727!3d59.32158752168505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77d27f2ab8c7%3A0xa8edded544209dd8!2zQ2FybHNow6RsbHMgR8OlcmQ!5e1!3m2!1sen!2sse!4v1645927784108!5m2!1sen!2sse"
-                        width="600"
-                        height="450"
-                        style="border: 0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                    ></iframe>
-                </div>
                 <div class="getting-there-text">
                     <h3>Getting there</h3>
                     <p class="text">
@@ -473,11 +545,31 @@
                         minute walk, much of which is on the island itself.
                     </p>
                 </div>
+                <div class="getting-there-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1390.1050337069082!2d18.018187394631727!3d59.32158752168505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77d27f2ab8c7%3A0xa8edded544209dd8!2zQ2FybHNow6RsbHMgR8OlcmQ!5e1!3m2!1sen!2sse!4v1645927784108!5m2!1sen!2sse"
+                        width="600"
+                        height="450"
+                        style="border: 0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                    ></iframe>
+                </div>
             </div>
             <!-- End Getting There -->
 
             <!-- Accommodation -->
             <div id="accommodation">
+                <div class="accommodation-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d600.3996893718811!2d18.025832059288852!3d59.32111482329216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77d1db20b12f%3A0xba5733bdfb1180b5!2sL%C3%A5ngholmen%20Hotell%20Stockholm!5e1!3m2!1sen!2sse!4v1645927676120!5m2!1sen!2sse"
+                        width="600"
+                        height="450"
+                        style="border: 0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                    ></iframe>
+                </div>
                 <div class="accommodation-text">
                     <h3>Accommodation</h3>
                     <p class="text">
@@ -504,26 +596,12 @@
                         transport links to the venue.
                     </p>
                 </div>
-
-                <div class="accommodation-map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d600.3996893718811!2d18.025832059288852!3d59.32111482329216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77d1db20b12f%3A0xba5733bdfb1180b5!2sL%C3%A5ngholmen%20Hotell%20Stockholm!5e1!3m2!1sen!2sse!4v1645927676120!5m2!1sen!2sse"
-                        width="600"
-                        height="450"
-                        style="border: 0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                    ></iframe>
-                </div>
             </div>
             <!-- End Accommodation -->
 
             <!-- Stockholm -->
             <div id="stockholm">
                 <div class="stockholm-header">
-                    <div class="stockholm-header-image">
-                        <img src="images/stockholm.jpeg" />
-                    </div>
                     <div class="stockholm-header-text">
                         <h3>Stockholm</h3>
                         <p class="text">
@@ -534,6 +612,9 @@
                             wedding so, if you can be around, please do let us
                             know.
                         </p>
+                    </div>
+                    <div class="stockholm-header-image">
+                        <img src="images/stockholm.jpeg" />
                     </div>
                 </div>
                 <div class="stockholm-details">
@@ -661,8 +742,9 @@
                         Having lived together for almost three years, we
                         realised that we do not need a registry; your presence
                         is all that we request. However, if you are determined
-                        to give a gift, we are currently saving to buy a house
-                        so any contributions would be very gratefully received.
+                        to give a gift, any contributions towards our honeymoon
+                        or our upcoming move to Stockholm would be very
+                        gratefully received.
                     </p>
                 </div>
             </div>
